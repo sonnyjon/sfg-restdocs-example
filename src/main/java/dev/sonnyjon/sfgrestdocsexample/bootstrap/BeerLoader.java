@@ -1,7 +1,7 @@
-package guru.springframework.sfgrestdocsexample.bootstrap;
+package dev.sonnyjon.sfgrestdocsexample.bootstrap;
 
-import guru.springframework.sfgrestdocsexample.domain.Beer;
-import guru.springframework.sfgrestdocsexample.repositories.BeerRepository;
+import dev.sonnyjon.sfgrestdocsexample.repositories.BeerRepository;
+import dev.sonnyjon.sfgrestdocsexample.domain.Beer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +20,8 @@ public class BeerLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args)
+    {
         loadBeerObjects();
     }
 

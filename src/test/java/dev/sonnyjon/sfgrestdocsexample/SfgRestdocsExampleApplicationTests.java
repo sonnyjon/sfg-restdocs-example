@@ -1,4 +1,4 @@
-package guru.springframework.sfgrestdocsexample;
+package dev.sonnyjon.sfgrestdocsexample;
 
 
 import org.junit.jupiter.api.Test;

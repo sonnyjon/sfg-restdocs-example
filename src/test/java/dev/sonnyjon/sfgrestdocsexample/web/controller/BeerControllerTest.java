@@ -1,16 +1,15 @@
-package guru.springframework.sfgrestdocsexample.web.controller;
+package dev.sonnyjon.sfgrestdocsexample.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import guru.springframework.sfgrestdocsexample.domain.Beer;
-import guru.springframework.sfgrestdocsexample.repositories.BeerRepository;
-import guru.springframework.sfgrestdocsexample.web.model.BeerDto;
-import guru.springframework.sfgrestdocsexample.web.model.BeerStyleEnum;
+import dev.sonnyjon.sfgrestdocsexample.domain.Beer;
+import dev.sonnyjon.sfgrestdocsexample.repositories.BeerRepository;
+import dev.sonnyjon.sfgrestdocsexample.web.model.BeerDto;
+import dev.sonnyjon.sfgrestdocsexample.web.model.BeerStyleEnum;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -40,7 +39,7 @@ class BeerControllerTest {
     void getBeerById() throws Exception {
         given(beerRepository.findById(any())).willReturn(Optional.of(Beer.builder().build()));
 
-        mockMvc.perform(get("/api/v1/beer/" + UUID.randomUUID().toString()).accept(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/api/v1/beer/" + UUID.randomUUID()).accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
 
@@ -60,7 +59,7 @@ class BeerControllerTest {
         BeerDto beerDto =  getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
-        mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID().toString())
+        mockMvc.perform(put("/api/v1/beer/" + UUID.randomUUID())
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(beerDtoJson))
                 .andExpect(status().isNoContent());

@@ -1,4 +1,4 @@
-package guru.springframework.sfgrestdocsexample.domain;
+package dev.sonnyjon.sfgrestdocsexample.domain;
 
 import jakarta.persistence.*;
 import lombok.*;

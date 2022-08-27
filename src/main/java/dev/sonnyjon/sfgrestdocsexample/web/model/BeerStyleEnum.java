@@ -1,4 +1,4 @@
-package guru.springframework.sfgrestdocsexample.web.model;
+package dev.sonnyjon.sfgrestdocsexample.web.model;
 
 /**
  * Created by jt on 2019-05-12.

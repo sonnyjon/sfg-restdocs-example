@@ -1,6 +1,6 @@
-package guru.springframework.sfgrestdocsexample.repositories;
+package dev.sonnyjon.sfgrestdocsexample.repositories;
 
-import guru.springframework.sfgrestdocsexample.domain.Beer;
+import dev.sonnyjon.sfgrestdocsexample.domain.Beer;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 

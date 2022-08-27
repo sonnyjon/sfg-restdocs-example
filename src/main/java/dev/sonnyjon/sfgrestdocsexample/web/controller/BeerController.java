@@ -1,8 +1,8 @@
-package guru.springframework.sfgrestdocsexample.web.controller;
+package dev.sonnyjon.sfgrestdocsexample.web.controller;
 
-import guru.springframework.sfgrestdocsexample.repositories.BeerRepository;
-import guru.springframework.sfgrestdocsexample.web.mappers.BeerMapper;
-import guru.springframework.sfgrestdocsexample.web.model.BeerDto;
+import dev.sonnyjon.sfgrestdocsexample.web.model.BeerDto;
+import dev.sonnyjon.sfgrestdocsexample.repositories.BeerRepository;
+import dev.sonnyjon.sfgrestdocsexample.web.mappers.BeerMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,17 +23,15 @@ public class BeerController {
     private final BeerRepository beerRepository;
 
     @GetMapping("/{beerId}")
-    public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId){
-
-
+    public ResponseEntity<BeerDto> getBeerById(@PathVariable("beerId") UUID beerId)
+    {
         return new ResponseEntity<>(beerMapper.BeerToBeerDto(beerRepository.findById(beerId).get()), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDto beerDto){
-
+    public ResponseEntity saveNewBeer(@RequestBody @Validated BeerDto beerDto)
+    {
         beerRepository.save(beerMapper.BeerDtoToBeer(beerDto));
-
         return new ResponseEntity(HttpStatus.CREATED);
     }
 

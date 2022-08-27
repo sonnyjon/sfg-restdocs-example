@@ -1,4 +1,4 @@
-package guru.springframework.sfgrestdocsexample.web.controller;
+package dev.sonnyjon.sfgrestdocsexample.web.controller;
 
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;

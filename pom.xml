@@ -8,7 +8,7 @@
         <version>3.0.0-M3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>guru.springframework</groupId>
+    <groupId>dev.sonnyjon</groupId>
     <artifactId>sfg-restdocs-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>sfg-restdocs-example</name>
