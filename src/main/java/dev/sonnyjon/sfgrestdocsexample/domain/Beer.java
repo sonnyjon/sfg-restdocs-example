@@ -20,8 +20,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Beer {
-
+public class Beer
+{
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -48,6 +48,4 @@ public class Beer {
 
     private Integer minOnHand;
     private Integer quantityToBrew;
-
-
 }
