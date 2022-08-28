@@ -13,13 +13,15 @@ import java.util.List;
  * Created by jt on 2019-05-25.
  */
 @ControllerAdvice
-public class MvcExceptionHandler {
-
+public class MvcExceptionHandler
+{
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<List> validationErrorHandler(ConstraintViolationException ex){
-        List<String> errorsList = new ArrayList<>(ex.getConstraintViolations().size());
+    public ResponseEntity<List> validationErrorHandler(ConstraintViolationException cve)
+    {
+        List<String> errorsList = new ArrayList<>(cve.getConstraintViolations().size());
 
-        ex.getConstraintViolations().forEach(error -> errorsList.add(error.toString()));
+        cve.getConstraintViolations()
+            .forEach(error -> errorsList.add( error.toString() ));
 
         return new ResponseEntity<>(errorsList, HttpStatus.BAD_REQUEST);
     }
